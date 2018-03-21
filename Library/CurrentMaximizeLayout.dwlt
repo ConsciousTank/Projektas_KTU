@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 885
+  controlID: 4453
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 631
+    y: 638
     width: 589
-    height: 331
+    height: 324
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     m_HBaseRangeMin: -294.5
     m_HBaseRangeMax: 294.5
-    m_VBaseRangeMin: -157
-    m_VBaseRangeMax: 157
+    m_VBaseRangeMin: -153.5
+    m_VBaseRangeMax: 153.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -81,9 +81,9 @@ MonoBehaviour:
       x: 0
       y: 17
       width: 589
-      height: 314
+      height: 307
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 294.5, y: 157}
+    m_Translation: {x: 294.5, y: 153.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -91,14 +91,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -294.5
-      y: -157
+      y: -153.5
       width: 589
-      height: 314
+      height: 307
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 589, y: 331}
+  m_LastWindowPixelSize: {x: 589, y: 324}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 886
+  controlID: 4454
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 591
-    height: 540
+    height: 547
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 5}
@@ -177,17 +177,17 @@ MonoBehaviour:
     x: 0
     y: 91
     width: 589
-    height: 519
+    height: 526
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 2338.5053490136816
+  lastFramingTime: 1981.2294267594368
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 182.76845, y: 91.05545, z: -13.990589}
+    m_Target: {x: 3.74115, y: 7.3582807, z: -0.03744544}
     speed: 2
-    m_Value: {x: 182.76845, y: 91.05545, z: -13.990589}
+    m_Value: {x: 3.74115, y: 7.3582807, z: -0.03744544}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -215,9 +215,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 421.3636
+    m_Target: 25.708958
     speed: 2
-    m_Value: 421.3636
+    m_Value: 25.708958
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -271,9 +271,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 540
+    y: 547
     width: 591
-    height: 352
+    height: 345
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 841
+  controlID: 4339
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -359,9 +359,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 36b2ffff
-    m_LastClickedID: -19914
-    m_ExpandedIDs: 20b2ffff36b2ffff04e5ffff9efbffff00000000ba2d0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 042afeffd0d2ffff9efbffff00000000f02d0000f42d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Prefabs/LabirintoEditorius
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -459,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ee240000
     m_LastClickedID: 9454
-    m_ExpandedIDs: 000000003229000044290000b2290000e4290000fc2a00003a2b00004c2b00006c2b0000fc2b0000
+    m_ExpandedIDs: fadeffff0000000036290000b6290000e8290000062a00001c2a0000402b0000522b0000722b0000742b0000e82c0000862d0000362e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -484,10 +484,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 36b2ffff
+    scrollPos: {x: 0, y: 9}
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003229000044290000b2290000e4290000fc2a00003a2b00004c2b00006c2b0000fc2b0000
+    m_ExpandedIDs: fadeffff0000000036290000b6290000e8290000062a00001c2a0000402b0000522b0000722b0000742b0000e82c0000862d0000362e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -512,8 +512,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 36b2ffff
-    m_LastClickedInstanceID: -19914
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -560,15 +560,14 @@ MonoBehaviour:
     y: 0
     width: 374
     height: 892
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
-  - {fileID: 16}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -643,35 +642,3 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12158, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Collab History
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 905
-    y: 99
-    width: 367
-    height: 855
-  m_PersistentViewDataDictionary: {fileID: 0}
-  m_InitialOpenURL: file:///C:/Users/pc/AppData/Roaming/Unity/Packages/node_modules/unityeditor-collab-history/dist/index.html
-  m_GlobalObjectTypeName: 
-  m_RegisteredViewURLs:
-  - file:///C:/Users/pc/AppData/Roaming/Unity/Packages/node_modules/unityeditor-collab-history/dist/index.html
-  m_RegisteredViewInstances:
-  - {fileID: 0}

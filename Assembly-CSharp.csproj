@@ -110,6 +110,7 @@
      <Compile Include="Assets\Skriptai\Inventorius\Objektai\Interakcijos\Reakcijos\Uzlaikytos\PamestoDaiktoReakcija.cs" />
      <Compile Include="Assets\Skriptai\Inventorius\Objektai\Inventorius\Daiktas.cs" />
      <Compile Include="Assets\Skriptai\LabirintoEditorius\ButtonManager.cs" />
+     <Compile Include="Assets\Skriptai\LabirintoEditorius\RoomInteractibility.cs" />
      <Compile Include="Assets\Skriptai\LabirintoEditorius\SampleKambarys.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Judėjimas\Move.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Kamera\CamFollow.cs" />
