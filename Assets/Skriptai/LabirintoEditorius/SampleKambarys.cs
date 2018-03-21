@@ -8,6 +8,7 @@ public class SampleKambarys : MonoBehaviour {
     public string nameLabel;
     public Sprite iconImage;
     public int id;
+    public Image im;
     public GameObject roomM;
 
 
@@ -17,6 +18,7 @@ public class SampleKambarys : MonoBehaviour {
     // Use this for initialization
     void Start () {
         buttonComponent.onClick.AddListener(HandleClick);
+        im = GetComponent<Image>();
     }
 
     public void Setup(Room currentRoom, ButtonManager BuMa)
@@ -26,6 +28,7 @@ public class SampleKambarys : MonoBehaviour {
         iconImage = room.icon;
         id = room.id;
         roomM = currentRoom.room;
+        im.sprite = iconImage;
         this.BuMa = BuMa;
         
 

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.97794116, g: 0.36672795, b: 0.36672795, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -73,6 +73,7 @@ MonoBehaviour:
   nameLabel: 
   iconImage: {fileID: 0}
   id: 0
+  im: {fileID: 114065635891248540}
   roomM: {fileID: 0}
 --- !u!114 &114432599686614514
 MonoBehaviour:
