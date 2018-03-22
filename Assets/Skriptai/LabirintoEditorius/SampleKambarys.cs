@@ -30,11 +30,12 @@ public class SampleKambarys : MonoBehaviour {
         roomM = currentRoom.room;
         im.sprite = iconImage;
         this.BuMa = BuMa;
-        
-
     }
+
     public void HandleClick()
     {
-        Instantiate(roomM);
+        GameObject roomR = Instantiate(roomM);
+        RoomInteractibility id = roomR.GetComponent<RoomInteractibility>();
+        id.id = this.id;
     }
 }

@@ -8,7 +8,7 @@ public class Room
 {
     public string itemName;
     public Sprite icon;
-    public int id = 1;
+    public int id = -1;
     public GameObject room = null;
 }
 

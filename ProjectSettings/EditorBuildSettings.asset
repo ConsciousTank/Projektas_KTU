@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenos/asd.unity
     guid: 320b02110f9d1ec428e5efb7f4a818ac
+  - enabled: 1
+    path: Assets/Scenos/LEditor.unity
+    guid: 3ca8ea88c4edaf542a54516b16a291ac
