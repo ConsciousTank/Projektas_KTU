@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomData
 {
@@ -21,7 +22,7 @@ public class Generator : MonoBehaviour {
 
     public void Start()
     {
-        GameObject.DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
         for (int x = 0; x < 19; x++)
         {
             for (int y = 0; y < 11; y++)

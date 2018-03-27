@@ -8,6 +8,7 @@ public class RoomInteractibility : MonoBehaviour {
     private float camRayLength = 100f;
     private int floorMask;
     private int roomMask;
+    private int spaceMask;
     private bool isFollowing;
     public int rotation;
     public int id;
@@ -20,6 +21,7 @@ public class RoomInteractibility : MonoBehaviour {
         isFollowing = true;
         floorMask = LayerMask.GetMask("EditorBackground");
         roomMask = LayerMask.GetMask("Room");
+        spaceMask = LayerMask.GetMask("PlaceSpace");
     }
 
     void Update () {
@@ -31,7 +33,7 @@ public class RoomInteractibility : MonoBehaviour {
             {
                 transform.position = floorHit.point;
             }
-            if (Input.GetMouseButtonDown(0) && Generator.isEmpty(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)))
+            if (Input.GetMouseButtonDown(0) && Generator.isEmpty(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)) && Physics.Raycast(camRay, camRayLength, spaceMask))
             {
                 Generator.AddRoom(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), rotation, id);
                 isFollowing = false;
