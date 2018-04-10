@@ -36,7 +36,8 @@ public class Move : MonoBehaviour {
     }
     void Turning()
     {
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        Ray camRay = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {

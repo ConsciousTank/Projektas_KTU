@@ -5,7 +5,10 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - buttonComponent: {instanceID: 0}
+  - iconImage: {instanceID: 0}
+  - roomM: {fileID: 1327883844269128, guid: 8605e37c2140e8645aff7dd25c8ff900, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

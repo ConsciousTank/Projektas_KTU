@@ -4,38 +4,33 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class SampleKambarys : MonoBehaviour {
-    public Button buttonComponent;
-    public string nameLabel;
-    public Sprite iconImage;
-    public int id;
-    public Image im;
-    public GameObject roomM;
 
-
+    private ButtonManager butMan;
     private Room room;
-    private ButtonManager BuMa;
+    private GameObject cursRoom;
+    private Button buttonComponent;
 
-    // Use this for initialization
-    void Start () {
-        buttonComponent.onClick.AddListener(HandleClick);
-        im = GetComponent<Image>();
+    void Awake()
+    {
+        buttonComponent = GetComponent<Button>();
     }
 
-    public void Setup(Room currentRoom, ButtonManager BuMa)
+    void Start () {
+        buttonComponent.onClick.AddListener(HandleClick);
+    }
+
+    public void Setup(Room currentRoom, ButtonManager buttonManager)
     {
+        butMan = buttonManager;
         room = currentRoom;
-        nameLabel = room.itemName;
-        iconImage = room.icon;
-        id = room.id;
-        roomM = currentRoom.room;
-        im.sprite = iconImage;
-        this.BuMa = BuMa;
+        cursRoom = butMan.cursRoom;
     }
 
     public void HandleClick()
     {
-        GameObject roomR = Instantiate(roomM);
-        RoomInteractibility id = roomR.GetComponent<RoomInteractibility>();
-        id.id = this.id;
+        GameObject roomR = Instantiate(cursRoom);
+        CursorRoom cr = roomR.GetComponent<CursorRoom>();
+        cr.Setup(room, butMan);
+        CursorRoom.ChangeCurrentRoom(roomR);
     }
 }

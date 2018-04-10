@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class RoomInteractibility : MonoBehaviour {
 
+    public static bool holding = false;
     private float camRayLength = 100f;
     private int floorMask;
     private int roomMask;
     private int spaceMask;
-    private bool isFollowing;
+    public bool isFollowing;
     public int rotation;
     public int id;
     public SpriteRenderer sr;
+    public GameObject ownRoom;
 
 	void Start () {
-        Physics2D.queriesHitTriggers = true;
+        holding = true;
         rotation = 0;
         sr = GetComponent<SpriteRenderer>();
         isFollowing = true;
@@ -35,9 +37,11 @@ public class RoomInteractibility : MonoBehaviour {
             }
             if (Input.GetMouseButtonDown(0) && Generator.isEmpty(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)) && Physics.Raycast(camRay, camRayLength, spaceMask))
             {
+                gameObject.tag = "PlacedRoom";
+                GameObject gm = Instantiate(ownRoom);
                 Generator.AddRoom(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), rotation, id);
-                isFollowing = false;
-                SnapToGrid();
+                gm.GetComponent<RoomInteractibility>().isFollowing = false;
+                gm.GetComponent<RoomInteractibility>().SnapToGrid();
             }
             if (Input.GetKeyDown("r"))
             {

@@ -78,9 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47f40bb33e2ef04e82a13f28cec47f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFollowing: 0
   rotation: 0
   id: 0
   sr: {fileID: 212758417903440116}
+  ownRoom: {fileID: 1909069912374706, guid: 2702a01de37f1e3418cae54cc50298ce, type: 2}
 --- !u!212 &212758417903440116
 SpriteRenderer:
   m_ObjectHideFlags: 1
