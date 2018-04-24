@@ -41,7 +41,7 @@ public class CursorRoom : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && Generator.isEmpty(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)) && Physics.Raycast(camRay, camRayLength, spaceMask))
         {
             GameObject gm = Instantiate(placeRoom,transform.position,transform.rotation);
-          //Neleido dirbti su kitais scriptais,kol yra error  gm.GetComponent<PlacedRoom>().Setup(room);
+            gm.GetComponent<PlacedRoom>().Setup(room);
             Generator.AddRoom(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), rotation, id);
         }
         if (Input.GetKeyDown("r"))

@@ -8,14 +8,23 @@ public class Move : MonoBehaviour {
     public float speed;
     public Rigidbody rb;
     Vector3 movement;
-    public Camera Cam;
+    Camera Cam;
     int floorMask;                     
     float camRayLength = 100f;
 
-    // Use this for initialization
-    void Start () {
-        floorMask = LayerMask.GetMask("Floor");
+    void Awake()
+    {
         rb = gameObject.GetComponent<Rigidbody>();
+    }
+
+    public void SetCam(Camera camera)
+    {
+        Cam = camera;
+    }
+
+    void Start () {
+
+        floorMask = LayerMask.GetMask("Floor");
         Transform transform = gameObject.transform;
 
 	}

@@ -20,7 +20,6 @@ public class ButtonManager : MonoBehaviour {
     public List<Room> rooms = new List<Room>();
     public GameObject Panel;
 
-
 	void Start () {
         Physics2D.queriesHitTriggers = true;
         AddRooms();

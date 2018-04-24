@@ -3,6 +3,7 @@
 public class InventoriausAtidarymas : MonoBehaviour
 {
     public GameObject inventorius;
+    public ScriptableObject daiktas;
     public bool Ijungtas = false;
 
     private void Start()
@@ -21,6 +22,11 @@ public class InventoriausAtidarymas : MonoBehaviour
         {
             Ijungtas = !Ijungtas;
             inventorius.SetActive(Ijungtas);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            inventorius.GetComponentInChildren<Inventorius>(false).Prideti(daiktas);
+
         }
     }
 }
