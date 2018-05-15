@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
 
-    
+
+    public GameMan gameManager;
     public float speed;
     public Rigidbody rb;
+    bool firstPerson = true;
     Vector3 movement;
     Camera Cam;
     int floorMask;                     
@@ -19,30 +21,54 @@ public class Move : MonoBehaviour {
 
     public void SetCam(Camera camera)
     {
+        
         Cam = camera;
     }
 
     void Start () {
-
         floorMask = LayerMask.GetMask("Floor");
         Transform transform = gameObject.transform;
-
 	}
 	
-	// Update is called once per frame
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Finish")
+        {
+            gameManager.SwitchState(GameMan.State.SCOREBOARD);
+            gameManager.glfm.UpdateLevel();
+        }
+        if(other.gameObject.tag == "Coin")
+        {
+            gameManager.AddScore(1);
+            GetComponent<AudioSource>().Play();
+            Destroy(other.gameObject);
+        }
+}
+
 	void FixedUpdate () {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        Mov(h, v);
-        Turning();
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        if (firstPerson == false)
+        {
+            Mov3P(h, v);
+            Turning();
+        }
+        else
+        {
+            transform.Translate(h * Time.deltaTime * speed, 0, v * Time.deltaTime * speed);
+        }
 
     }
-    void Mov(float h, float v)
+
+
+
+    void Mov3P(float h, float v)
     {
         movement.Set(h, 0f, v);
         movement = movement.normalized * speed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
     }
+
     void Turning()
     {
         

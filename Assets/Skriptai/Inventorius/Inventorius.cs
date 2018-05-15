@@ -1,30 +1,126 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections.Generic;
 
-[ExecuteInEditMode]
 public class Inventorius : MonoBehaviour
 {
     public GameObject laukelis;
     public DaiktuSarasasVeikejo daiktai;
-    public List<GameObject> eilutes = new List<GameObject>();
+    public List<GameObject> daiktuEilutes;
+
+    private Toggle aprasymoTikrinimas;
+    private InputField ieskomasDaiktas;
+    private List<GameObject> pasleptosDaiktuEilutes;
+    private bool pakeistasDaiktuSarasas;
+
+    public void Start()
+    {
+        daiktuEilutes = new List<GameObject>();
+        pasleptosDaiktuEilutes = new List<GameObject>();
+        GameObject inventorius = GameObject.Find("Inventorius");
+        aprasymoTikrinimas = inventorius.GetComponentInChildren<Toggle>();
+        ieskomasDaiktas = inventorius.GetComponentInChildren<InputField>();
+        pakeistasDaiktuSarasas = false;
+    }
 
     public void Update()
     {
-        if (daiktai.DaiktuKiekis() < eilutes.Count)
+        PakitoReiksmePaieskosLaukelyje();
+    }
+
+    public void RodytiTikSlotoDaiktus()
+    {
+        if (pakeistasDaiktuSarasas)
         {
-            for (int i = eilutes.Count - 1; i >= daiktai.DaiktuKiekis(); i--)
+            PakeistiMatomumaDaiktu(daiktai.RastiVisusSlotoDaiktus(), false);
+        }
+        else
+        {
+
+        }
+    }
+
+    public void Prideti(Daiktas daiktas)
+    {
+        PapildytiInventoriu(daiktas, daiktai.PridetiDaikta(daiktas));
+    }
+
+    public void PakitoReiksmePaieskosLaukelyje()
+    {
+        if (ieskomasDaiktas.textComponent.text.Length == 0)
+        {
+            pakeistasDaiktuSarasas = false;
+            AtkeistiNematomuma();
+        }
+        else
+        {
+            pakeistasDaiktuSarasas = true;
+            PakeistiMatomumaDaiktu(daiktai.RastiDaiktaPagalPavadinimaIrAprasyma(ieskomasDaiktas.textComponent.text, aprasymoTikrinimas), false);
+        }
+    }
+
+    private void AtkeistiNematomuma()
+    {
+        foreach (GameObject daiktas in pasleptosDaiktuEilutes)
+        {
+            daiktas.SetActive(true);
+        }
+        pasleptosDaiktuEilutes.Clear();
+    }
+
+    private void PakeistiMatomumaDaiktuPasleptuEiluciu(List<Daiktas> nekeiciamiDaiktai, bool matomumas)
+    {
+        if (nekeiciamiDaiktai.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            foreach (GameObject daiktoEilute in pasleptosDaiktuEilutes)
             {
-                DestroyImmediate(eilutes[i]); //Sunaikina editoriaus metu
-                //Destroy(eilutes[i]); //tures buti zaidimo metu
-                eilutes.RemoveAt(i);
+                if (!PatikrinimasArYraNekeiciamas(nekeiciamiDaiktai, daiktoEilute.name))
+                {
+                    daiktoEilute.SetActive(matomumas);
+                }
             }
         }
     }
 
-    public void Prideti(ScriptableObject daiktas)
+    private void PakeistiMatomumaDaiktu(List<Daiktas> nekeiciamiDaiktai, bool matomumas)
     {
-        PapildytiInventoriu(daiktas as Daiktas, daiktai.PridetiDaikta(daiktas as Daiktas));
+        if (nekeiciamiDaiktai.Count == 0)
+        {
+            pasleptosDaiktuEilutes = daiktuEilutes;
+            for(int i = 0; i < daiktuEilutes.Count;i++)
+            {
+                daiktuEilutes[i].SetActive(matomumas);
+            }
+        }
+        else
+        {
+            AtkeistiNematomuma();
+            foreach (GameObject daiktoEilute in daiktuEilutes)
+            {
+                if (!PatikrinimasArYraNekeiciamas(nekeiciamiDaiktai, daiktoEilute.name))
+                {
+                    daiktoEilute.SetActive(matomumas);
+                    pasleptosDaiktuEilutes.Add(daiktoEilute);
+                }
+            }
+        }
+    }
+
+    private bool PatikrinimasArYraNekeiciamas(List<Daiktas> nekeiciamiDaiktai, string daiktas)
+    {
+        foreach (Daiktas nekeiciamasDaiktas in nekeiciamiDaiktai)
+        {
+            if (daiktas.CompareTo(nekeiciamasDaiktas.pavadinimas) == 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void PapildytiInventoriu(Daiktas daiktas, int skaicius)
@@ -37,8 +133,12 @@ public class Inventorius : MonoBehaviour
             paveiksliukas[1].sprite = daiktas.daiktoPaveiksliukas;
             Text[] pavIrKiek = objektas.GetComponentsInChildren<Text>();
             pavIrKiek[0].text = daiktas.pavadinimas;
+            objektas.name = daiktas.pavadinimas;
             pavIrKiek[1].enabled = false;
-            eilutes.Add(objektas);
+            int vieta = RastiVieta(objektas.name);
+            objektas.transform.SetSiblingIndex(vieta);
+            Debug.Log(vieta + " " + daiktas.pavadinimas);
+            daiktuEilutes.Insert(RastiVieta(objektas.name), objektas);
         }
         else
         {
@@ -49,6 +149,18 @@ public class Inventorius : MonoBehaviour
         }
     }
 
+    private int RastiVieta(string pavadinimas)
+    {
+        for (int i = 0; i < daiktuEilutes.Count; i++)
+        {
+            int palyginimas = Palyginimai.PalygtintiZodzius(daiktuEilutes[i].name,pavadinimas);
+            if (palyginimas < 0)
+            {
+                return i;
+            }
+        }
+        return daiktuEilutes.Count;
+    }
     private int GautiSkaiciu(string skaicius)
     {
         skaicius = skaicius.Substring(skaicius.IndexOf('(') + 1, skaicius.IndexOf(')') - skaicius.IndexOf('(') - 1);
@@ -57,13 +169,14 @@ public class Inventorius : MonoBehaviour
 
     private GameObject RastiDaiktoEilute(string pavadinimas)
     {
-        foreach (GameObject eilute in eilutes)
+        foreach (GameObject eilute in daiktuEilutes)
         {
-            if (eilute.GetComponentInChildren<Text>().text.CompareTo(pavadinimas) == 0)
+            if (eilute.name.CompareTo(pavadinimas) == 0)
             {
                 return eilute;
             }
         }
         return null;
     }
+
 }

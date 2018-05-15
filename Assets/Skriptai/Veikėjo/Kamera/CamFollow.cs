@@ -13,6 +13,11 @@ public class CamFollow : MonoBehaviour {
         offset = transform.position - target.position;
     }
 
+    public void ResetOffset()
+    {
+        offset = transform.position - target.position;
+    }
+
     void FixedUpdate()
     {
         Vector3 targetCamPos = target.position + offset;

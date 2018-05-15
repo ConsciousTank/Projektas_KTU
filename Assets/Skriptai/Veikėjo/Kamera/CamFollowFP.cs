@@ -5,10 +5,25 @@ using UnityEngine;
 public class CamFollowFP : MonoBehaviour
 {
 
-    public Transform target;
+    Vector3 movement;
+    Vector2 mouseLook;
+    Vector2 smoothV;
+    float sensitivity = 5.0f;
+    float smoothing = 2.0f;
+
 
     void FixedUpdate()
     {
-        transform.position = target.position;
+
+        if (Input.GetMouseButtonDown(0))
+            Cursor.lockState = CursorLockMode.Locked;
+        var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
+            smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
+            smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
+            mouseLook += smoothV;
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            gameObject.transform.parent.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, gameObject.transform.parent.transform.up);
+
     }
 }

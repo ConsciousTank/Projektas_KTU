@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PlacedRoom
   - DaiktasPaimamas
+  - Walls
+  - Darkness emmitor
+  - EndFinish
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -19,8 +23,8 @@ TagManager:
   - EditorBackground
   - Room
   - PlaceSpace
-  - 
-  - 
+  - Walls
+  - Darkness emmitor
   - 
   - 
   - 

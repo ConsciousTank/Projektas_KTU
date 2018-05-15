@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DaiktuSarasasVeikejo : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DaiktuSarasasVeikejo : MonoBehaviour
     {
         daiktuSarasas = new List<Daiktas>();
     }
+
 
     public int DaiktuKiekis()
     {
@@ -46,7 +48,7 @@ public class DaiktuSarasasVeikejo : MonoBehaviour
         daiktuSarasas.Remove(daiktas);
     }
 
-    public List<Daiktas> RastiDaikta(string pavadinimas, bool aprasymasIeskoti)
+    public List<Daiktas> RastiDaiktaPagalPavadinimaIrAprasyma(string pavadinimas, bool aprasymasIeskoti)
     {
         List<Daiktas> sarasoIeskomu = new List<Daiktas>();
         if (aprasymasIeskoti)
@@ -72,4 +74,19 @@ public class DaiktuSarasasVeikejo : MonoBehaviour
         }
         return sarasoIeskomu;
     }
+
+    public List<Daiktas> RastiVisusSlotoDaiktus()
+    {
+        List<Daiktas> naujasSarasas = new List<Daiktas>();
+        foreach (Daiktas daiktas in daiktuSarasas)
+        {
+            if (daiktas.laukelioNr == Daiktas.LaukelisPriklausimo.uzsidejimuiVeikejo)
+            {
+                naujasSarasas.Add(daiktas);
+            }
+        }
+        return naujasSarasas;
+    }
+
+
 }

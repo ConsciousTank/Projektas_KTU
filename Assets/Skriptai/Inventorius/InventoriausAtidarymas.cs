@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class InventoriausAtidarymas : MonoBehaviour
 {
     public GameObject inventorius;
-    public ScriptableObject daiktas;
+    public List<Daiktas> daiktai;
     public bool Ijungtas = false;
 
     private void Start()
@@ -25,8 +26,11 @@ public class InventoriausAtidarymas : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            inventorius.GetComponentInChildren<Inventorius>(false).Prideti(daiktas);
-
+            foreach (Daiktas daiktas in daiktai)
+            {
+                inventorius.GetComponentInChildren<Inventorius>().Prideti(daiktas);
+            }
         }
+
     }
 }

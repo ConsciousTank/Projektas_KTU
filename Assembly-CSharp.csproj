@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DuomenuStrukturos\Medis.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -103,16 +102,25 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
+     <Compile Include="Assets\Skriptai\DuomenuStrukturos\Medis.cs" />
+     <Compile Include="Assets\Skriptai\Editoriaus\EditoriuLangai\DaiktoKurimoLangas.cs" />
+     <Compile Include="Assets\Skriptai\GameMan.cs" />
      <Compile Include="Assets\Skriptai\Inventorius\DaiktuSarasasVeikejo.cs" />
      <Compile Include="Assets\Skriptai\Inventorius\InventoriausAtidarymas.cs" />
      <Compile Include="Assets\Skriptai\Inventorius\Inventorius.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\IventoriausLangoDydzioPalaikymas.cs" />
      <Compile Include="Assets\Skriptai\Inventorius\Objektai\Inventorius\Daiktas.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\ButtonManager.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\CursorRoom.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\Generator.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\PlacedRoom.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\RoomInteractibility.cs" />
-     <Compile Include="Assets\Skriptai\LabirintoEditorius\SampleKambarys.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\DarknessBehaviour.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\GetLevelFromManager.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\ButtonManager.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\CursorRoom.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\Generator.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\PlacedRoom.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\RoomInteractibility.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\SampleKambarys.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\MoveForward.cs" />
+     <Compile Include="Assets\Skriptai\Labirinto\ScoreScript.cs" />
+     <Compile Include="Assets\Skriptai\ReikalingiPakeitimai\Palyginimai.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Judėjimas\Move.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Kamera\CamFollow.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Kamera\CamFollowFP.cs" />
