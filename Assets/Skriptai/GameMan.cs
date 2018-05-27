@@ -2,7 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMan : MonoBehaviour {
+public enum State
+{
+    DEFAULT,
+    INVENTORY,
+    INGAME,
+    EDITOR,
+    OPTIONS,
+    MENU,
+    DIALOGUE,
+    SCOREBOARD,
+};
+public class GameMan : MonoBehaviour
+{
 
     public ButtonManager buttonManager;
     public Generator generator;
@@ -10,11 +22,13 @@ public class GameMan : MonoBehaviour {
     public Camera gameCamera;
     public Camera menuCamera;
     public Camera scoreCamera;
+    public Camera inventoryCamera;
     Camera playerCamera;
     public Canvas editorOverlay;
     public Canvas gameOverlay;
     public Canvas menuOverlay;
     public Canvas scoreOverlay;
+    public Canvas inventoryOverlay;
     public GameObject playerPrefab;
     public GetLevelFromManager glfm;
     public ScoreScript ss;
@@ -23,11 +37,40 @@ public class GameMan : MonoBehaviour {
     private int startingPointY;
     private int endingPointX;
     private int endingPointY;
-    private int level;
-    private int score;
-
+    [SerializeField] private int level;
+    [SerializeField] private int currentScore;
+    [SerializeField] private int maxScore;
+    public void SetupForTests(Camera editorCamera, Camera gameCamera, Camera menuCamera, Camera scoreCamera, Camera inventoryCamera, Canvas editorOverlay, Canvas gameOverlay, Canvas menuOverlay, Canvas scoreOverlay, Canvas inventoryOverlay, Generator generator)
+    {
+        this.editorCamera = editorCamera;
+        this.gameCamera = gameCamera;
+        this.menuCamera = menuCamera;
+        this.scoreCamera = scoreCamera;
+        this.inventoryCamera = inventoryCamera;
+        this.editorOverlay = editorOverlay;
+        this.gameOverlay = gameOverlay;
+        this.menuOverlay = menuOverlay;
+        this.scoreOverlay = scoreOverlay;
+        this.inventoryOverlay = inventoryOverlay;
+        this.generator = generator;
+}
     GameObject currentPlayer;
-
+    //Player constants
+    public const int playerMaxNumberOfSlots = 9;
+    public const int playerMaxStrength = 100;
+    public const int playerMaxAgility = 100;
+    public const int playerMaxIntelligence = 100;
+    //Player stats--------------------------
+    private int playerHealth;
+    private int playerMaxHealth;
+    private int playerNumberOfSlots;
+    private int playerStrength;
+    private int playerAgility;
+    private int playerIntelligence;
+    private int playerExperiencePoints;
+    public Inventorius playerListOfItems;
+    public Daiktas daiktas;
+    //-------------------------------------------------
     int state;
     int cameraX = 0;
     int cameraY = 0;
@@ -36,20 +79,10 @@ public class GameMan : MonoBehaviour {
     int playerY = 0;
     int playerZ = 0;
 
-    public enum State
-    {
-        DEFAULT, 
-        INVENTORY,
-        INGAME,
-        EDITOR,
-        OPTIONS,
-        MENU,
-        DIALOGUE,
-        SCOREBOARD,
-    };
 
-   
-    void Start () {
+
+    void Start ()
+    {
         maxX = 16;
         startingPointX = 9;
         startingPointY = 1;
@@ -64,7 +97,11 @@ public class GameMan : MonoBehaviour {
         menuCamera.enabled = false;
         scoreCamera.enabled = false;
         scoreOverlay.enabled = false;
+        inventoryCamera.enabled = false;
+        inventoryOverlay.enabled = false;
+        generator.AddPlayerRoom();
     }
+
 
     public int GetStartingPointX()
     {
@@ -76,15 +113,26 @@ public class GameMan : MonoBehaviour {
         return level;
     }
 
-    public int GetScore()
+    public int GetCurrentScore()
     {
-        return score;
+        return currentScore;
     }
 
-    public void AddScore(int value)
+    public State GetState()
     {
-        score = score + value;
+        return (State)state;
+    }
+
+    public void AddCurrentScore(int value)
+    {
+        currentScore = currentScore + value;
         ss.UpdateScore();
+    }
+
+    public void AddToScore()
+    {
+        maxScore = maxScore + currentScore;
+        currentScore = 0;
     }
 
     public int GetStartingPointY()
@@ -107,6 +155,18 @@ public class GameMan : MonoBehaviour {
         if (Input.GetKeyDown("escape") && (State)state == State.INGAME)
         SwitchState(State.MENU);
 
+        if (Input.GetButtonDown("Inventorius") == true)
+        {
+            playerListOfItems.Prideti(daiktas);
+            if ((State)state == State.INGAME)
+            {
+                SwitchState(State.INVENTORY);
+            }
+            else
+            if ((State)state == State.INVENTORY)
+                SwitchState(State.INGAME);
+        }
+
     }
     public void SetupPlayer(int x, int y, int z)
     {
@@ -125,6 +185,18 @@ public class GameMan : MonoBehaviour {
         //playerCamera.enabled = false;
     }
 
+    //Player stats get and set methods---------------------------------
+    public int getNumberOfSlots()
+    {
+        return playerNumberOfSlots;
+    }
+    public void setNumberOfSlots(int number)
+    {
+        playerNumberOfSlots = number;
+    }
+    //-----------------------------------------------------------
+
+        //kviečiamas su Scoreboard continue mygtuku
     public void NextLevel()
     {
         level = level + 1;
@@ -187,6 +259,8 @@ public class GameMan : MonoBehaviour {
 
     public void GoToEditor(bool erase)
     {
+        currentScore = 0;
+        ss.UpdateScore();
         generator.ResetRooms(erase);
         SwitchState((State.EDITOR));
     }
@@ -207,6 +281,8 @@ public class GameMan : MonoBehaviour {
                 menuOverlay.enabled = false;
                 scoreCamera.enabled = true;
                 scoreOverlay.enabled = true;
+                inventoryCamera.enabled = false;
+                inventoryOverlay.enabled = false;
                 Debug.Log(intoState);
                 state = (int)State.SCOREBOARD;
                 Cursor.lockState = CursorLockMode.None;
@@ -224,6 +300,8 @@ public class GameMan : MonoBehaviour {
                 menuOverlay.enabled = false;
                 scoreCamera.enabled = false;
                 scoreOverlay.enabled = false;
+                inventoryCamera.enabled = false;
+                inventoryOverlay.enabled = false;
                 Debug.Log(intoState);
                 state = (int)State.INGAME;
                 Cursor.lockState = CursorLockMode.Locked;
@@ -241,6 +319,8 @@ public class GameMan : MonoBehaviour {
                 menuOverlay.enabled = false;
                 scoreCamera.enabled = false;
                 scoreOverlay.enabled = false;
+                inventoryCamera.enabled = false;
+                inventoryOverlay.enabled = false;
                 Debug.Log(intoState);
                 state = (int)State.EDITOR;
                 Cursor.lockState = CursorLockMode.None;
@@ -258,8 +338,29 @@ public class GameMan : MonoBehaviour {
                 menuOverlay.enabled = true;
                 scoreCamera.enabled = false;
                 scoreOverlay.enabled = false;
+                inventoryCamera.enabled = false;
+                inventoryOverlay.enabled = false;
                 Debug.Log(intoState);
                 state = (int)State.MENU;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
+            case State.INVENTORY:
+                editorCamera.enabled = false;
+                editorCamera.gameObject.GetComponent<AudioListener>().enabled = true;
+                currentPlayer.SetActive(false);
+                //playerCamera.enabled = false;
+                //playerCamera.GetComponent<CamFollowFP>().enabled = false;
+                gameOverlay.enabled = false;
+                editorOverlay.enabled = false;
+                menuCamera.enabled = false;
+                menuOverlay.enabled = false;
+                scoreCamera.enabled = false;
+                scoreOverlay.enabled = false;
+                inventoryCamera.enabled = true;
+                inventoryOverlay.enabled = true;
+                Debug.Log(intoState);
+                state = (int)State.INVENTORY;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;

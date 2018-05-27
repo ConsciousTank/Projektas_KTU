@@ -17,8 +17,8 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 958ad9423c1a462fdfa6cfd26fb7ac93 Assembly-CSharp.dll:.ScoreScript
 852442bf4f6eda29c69bcb0643c2552d Assembly-CSharp.dll:.Move
-7f333157e81d902ec152243e77d8d3d0 Assembly-CSharp.dll:.Generator
-c58d0774d959caae5b586391770eecef Assembly-CSharp.dll:.InventoriausAtidarymas
+8d699b57aa20067b125fc1cac16578eb Assembly-CSharp.dll:.Generator
+5374deaa9675785555372a4545bcd315 Assembly-CSharp.dll:.InventoriausAtidarymas
 25a8032d233df72c368030798802d97d Assembly-CSharp.dll:.ExtrudeRandomEdges
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -86,6 +86,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 3ecea0c2e43f5d97a17c441bfcf59a7d Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingBehaviour
 9008bdf459020f5356e69af2650f275e Assembly-CSharp.dll:ProBuilder2.Examples.IcoBumpin
+aea5a9ec6dc706f94bc4f0f9a948a8b4 Assembly-CSharp.dll:.Boomerang
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -124,6 +125,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CursorRoom
+a0d23e6383d52a35c283e7efb46dd7aa Assembly-CSharp.dll:.SlotuLaukas
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ProBuilder2.Examples.HueCube
 205965134a5874db410d674ebdf33ba7 Assembly-CSharp.dll:.ExampleWheelController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
@@ -154,6 +156,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.KnifeBehaviour
 8c2c98384a06a02ca62b9a56e8fcf0bb Assembly-CSharp.dll:.Inventorius
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -172,8 +175,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 d0fa01a95a4d30d38c4de1f3bde685ca Assembly-CSharp.dll:.CamFollow
 f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingProfile
 420d73cb5979b4d126f3c0d301bcca59 Assembly-CSharp.dll:ProBuilder2.Examples.CameraControls
-18f94eb9dd510bcbc56a9b44c503038a Assembly-CSharp.dll:.Daiktas
+374cc3a016f79fe82d7d6c5492d9851e Assembly-CSharp.dll:.Daiktas
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 958ad9423c1a462fdfa6cfd26fb7ac93 Assembly-CSharp.dll:.GetLevelFromManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DaiktoIrPelesReakcijos
+1ffaf02ff8980850da1047d99e4a9673 Assembly-CSharp.dll:.SaugojimasDaiktoInformacijos
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlacedRoom
+dac699565ca0e9699b33d0dd9d5bc4e8 Assembly-CSharp.dll:.KeistiRodomaDaikta
 32dcc1dca94294515dfea07e896e1a84 Assembly-CSharp.dll:ProBuilder2.Examples.RuntimeEdit

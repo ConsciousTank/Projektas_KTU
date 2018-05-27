@@ -8,15 +8,19 @@ public class Move : MonoBehaviour {
     public GameMan gameManager;
     public float speed;
     public Rigidbody rb;
-    bool firstPerson = true;
-    Vector3 movement;
-    Camera Cam;
-    int floorMask;                     
-    float camRayLength = 100f;
+    public AudioClip coinSound;
+
+    private AudioSource source;
+    private bool firstPerson = true;
+    private Vector3 movement;
+    private Camera Cam;
+    private int floorMask;
+    private float camRayLength = 100f;
 
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     public void SetCam(Camera camera)
@@ -34,13 +38,14 @@ public class Move : MonoBehaviour {
     {
         if(other.gameObject.tag == "Finish")
         {
-            gameManager.SwitchState(GameMan.State.SCOREBOARD);
+            gameManager.SwitchState(State.SCOREBOARD);
             gameManager.glfm.UpdateLevel();
+            gameManager.AddToScore();
         }
-        if(other.gameObject.tag == "Coin")
+        if (other.gameObject.tag == "Coin")
         {
-            gameManager.AddScore(1);
-            GetComponent<AudioSource>().Play();
+            gameManager.AddCurrentScore(1);
+            source.PlayOneShot(coinSound);
             Destroy(other.gameObject);
         }
 }

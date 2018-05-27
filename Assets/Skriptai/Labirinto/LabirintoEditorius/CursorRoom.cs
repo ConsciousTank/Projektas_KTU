@@ -36,10 +36,10 @@ public class CursorRoom : MonoBehaviour {
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
             transform.position = floorHit.point;
-            SnapToGrid();
         }
         if (Input.GetMouseButtonDown(0) && Generator.isEmpty(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)) && Physics.Raycast(camRay, camRayLength, spaceMask))
         {
+            SnapToGrid();
             GameObject gm = Instantiate(placeRoom,transform.position,transform.rotation);
             gm.GetComponent<PlacedRoom>().Setup(room);
             Generator.AddRoom(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), rotation, id);

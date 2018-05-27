@@ -143,7 +143,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4375004777002626}
   - component: {fileID: 33413098876376542}
-  - component: {fileID: 135320616040917932}
   - component: {fileID: 23291875694881180}
   m_Layer: 0
   m_Name: LightGlobe1
@@ -219,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1962140444051332
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +228,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4469992772467922}
   - component: {fileID: 33999480696321990}
-  - component: {fileID: 135126739289271754}
   - component: {fileID: 23642708057166478}
   m_Layer: 0
   m_Name: LightGlobe2
@@ -1110,30 +1108,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!135 &135126739289271754
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1962140444051332}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135320616040917932
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1651646612983984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198817721505406284
 ParticleSystem:
   m_ObjectHideFlags: 1

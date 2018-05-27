@@ -9,6 +9,5 @@ public class DarknessBehaviour : MonoBehaviour {
     {
         if (other.gameObject.tag == "Walls")
             Destroy(gameObject);
-        Debug.Log("i");
     }
 }

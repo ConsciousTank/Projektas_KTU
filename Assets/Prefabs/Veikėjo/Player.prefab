@@ -43,16 +43,16 @@ GameObject:
   - component: {fileID: 23902839733404732}
   - component: {fileID: 54658801222864290}
   - component: {fileID: 114356546714650558}
-  - component: {fileID: 114585695154823442}
+  - component: {fileID: 114221689357390078}
   - component: {fileID: 136846895678791888}
   - component: {fileID: 82527450310510626}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1982285869272164
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8b919a8f97691474bb93d735a67ba94d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -325,6 +325,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114221689357390078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887521282816892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2534bc43cdd18ac4dbf22696e7070b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife: {fileID: 1462584627062074, guid: 13ec95e254096244c83fda0c94eff016, type: 2}
+  throwSound: {fileID: 8300000, guid: d95d4801ffd63a748b722a94aaf126c6, type: 3}
 --- !u!114 &114283616265547880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,20 +375,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   speed: 15
   rb: {fileID: 54658801222864290}
---- !u!114 &114585695154823442
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1887521282816892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16faed7164ea8074c813410f287bd0c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorius: {fileID: 0}
-  daiktai: []
-  Ijungtas: 0
+  coinSound: {fileID: 8300000, guid: 8b919a8f97691474bb93d735a67ba94d, type: 3}
 --- !u!124 &124494573105655464
 Behaviour:
   m_ObjectHideFlags: 1

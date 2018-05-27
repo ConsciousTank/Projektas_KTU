@@ -15,6 +15,6 @@ public class ScoreScript : MonoBehaviour {
 
     public void UpdateScore()
     {
-        textComponent.text = "Score: " + gameManager.GetScore();
+        textComponent.text = "Score: " + gameManager.GetCurrentScore();
     }
 }
