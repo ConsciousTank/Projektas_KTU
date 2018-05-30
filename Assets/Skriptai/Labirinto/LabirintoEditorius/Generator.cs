@@ -223,7 +223,7 @@ public class Generator : MonoBehaviour {
                     }
                     if (Random.value >= 0.5)
                     {
-                        GameObject e = Instantiate(blob, new Vector3(10 * x, 1, 10 * y), transform.rotation);
+                        GameObject e = Instantiate(blob, new Vector3(10 * x + Random.Range(0,3), 1, 10 * y + Random.Range(0, 3)), transform.rotation * Quaternion.Euler(0, Random.Range(0,360), 0));
                         coins.Add(e);
                     }
                     r.transform.Rotate(new Vector3(r.transform.rotation.x, -90 * roomCoord[x, y].rotation, r.transform.rotation.z));

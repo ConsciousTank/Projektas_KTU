@@ -46,6 +46,7 @@ public class Move : MonoBehaviour {
             gameManager.SwitchState(State.SCOREBOARD);
             gameManager.glfm.UpdateLevel();
             gameManager.AddToScore();
+            gameManager.EnemyDefeatedRefresh();
         }
         if (other.gameObject.tag == "Coin")
         {

@@ -68,6 +68,7 @@ public class GameMan : MonoBehaviour
     public const int playerMaxIntelligence = 100;
     //Player stats--------------------------
     private int currentScore = 0;
+    private int enemiesDefeated = 0;
     private int maxScore = 0;
     private int playerMaxHealth = 100;
     private int playerHealth = 100;
@@ -159,6 +160,21 @@ public class GameMan : MonoBehaviour
     public int GetStartingPointY()
     {
         return startingPointY;
+    }
+
+    public void EnemyDefeated()
+    {
+        enemiesDefeated = enemiesDefeated + 1;
+    }
+
+    public int GetEnemiesDefeated()
+    {
+        return enemiesDefeated;
+    }
+
+    public void EnemyDefeatedRefresh()
+    {
+        enemiesDefeated = 0;
     }
 
     public int GetEndingPointX()

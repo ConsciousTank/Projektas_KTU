@@ -40,6 +40,7 @@ public class KnifeBehaviour : MonoBehaviour
         {
             Destroy(collider.gameObject);
             source.PlayOneShot(blobSound);
+            GameObject.Find("GameManager").GetComponent<GameMan>().EnemyDefeated();
         }
         else
         if (collider.tag != "Item" && collider.tag != "Damage" && collider.tag != "Player" && collider.tag != "Knife" && collider.tag != "Coin" && owner.GetComponent<Boomerang>().CheckIfState(Boomerang.knifeState.THROWING))
