@@ -46,13 +46,13 @@ GameObject:
   - component: {fileID: 114221689357390078}
   - component: {fileID: 136846895678791888}
   - component: {fileID: 82527450310510626}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1982285869272164
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,9 +373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  speed: 15
+  speed: 10
   rb: {fileID: 54658801222864290}
   coinSound: {fileID: 8300000, guid: 8b919a8f97691474bb93d735a67ba94d, type: 3}
+  invulTime: 1
 --- !u!124 &124494573105655464
 Behaviour:
   m_ObjectHideFlags: 1

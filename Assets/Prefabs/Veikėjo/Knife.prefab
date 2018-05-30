@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23764933974388030}
   - component: {fileID: 54890963248608044}
   - component: {fileID: 114868519548489448}
-  - component: {fileID: 65141501878555168}
   - component: {fileID: 82472553693575528}
+  - component: {fileID: 65011437202178910}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Knife
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462584627062074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 77.12833, y: 0.87423825, z: 17.83018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3ad674a598981ee4f868a98ffc63cc06, type: 2}
+  - {fileID: 2100000, guid: 82bb69d8bf9931d42aecb6b4054652e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462584627062074}
-  m_Mesh: {fileID: 4300000, guid: e2eb2b8bd049cf847aa452f7bb41d7d4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4e641f79386540e43aae56a00254a5a3, type: 3}
 --- !u!54 &54890963248608044
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -93,7 +93,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462584627062074}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65141501878555168
+--- !u!65 &65011437202178910
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5242958, y: 0.24391174, z: 0.7131958}
-  m_Center: {x: -0.14760399, y: -0.005622864, z: 0.57128906}
+  m_Size: {x: 0.7, y: 1.3725681, z: 0.118342005}
+  m_Center: {x: 0, y: 0.18795419, z: 0}
 --- !u!82 &82472553693575528
 AudioSource:
   m_ObjectHideFlags: 1
@@ -205,3 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 89ee35aa2cfd4bb4f81d61cf035b3e5a, type: 3}
+  blobSound: {fileID: 8300000, guid: ac2664a2c226c224ea7806998f10519d, type: 3}

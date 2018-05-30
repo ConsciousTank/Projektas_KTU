@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 public class Boomerang : MonoBehaviour
 {
     public enum knifeState
@@ -37,12 +39,14 @@ public class Boomerang : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && state == knifeState.INHAND)
         {
             Throw();
+            GameObject.Find("Cursor").GetComponent<Image>().color = Color.red;
         }
         else
         if (Input.GetMouseButtonDown(0) && state == knifeState.INGROUND)
         {
             Destroy(currentKnife);
             state = knifeState.INHAND;
+            GameObject.Find("Cursor").GetComponent<Image>().color = Color.white;
         }
     }
 
@@ -51,9 +55,9 @@ public class Boomerang : MonoBehaviour
     {
         source.PlayOneShot(throwSound);
         state = knifeState.THROWING;
-        currentKnife = Instantiate(knife, transform.position + new Vector3(0,1f), Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0,0,90)));
+        currentKnife = Instantiate(knife, transform.position + Camera.main.transform.forward + new Vector3(0,1f), Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 90, 270)));
         currentKnife.GetComponent<KnifeBehaviour>().SetOwner(this.gameObject);
-        currentKnife.GetComponent<Rigidbody>().velocity = 15 * Camera.main.transform.forward;
+        currentKnife.GetComponent<Rigidbody>().velocity = 20 * Camera.main.transform.forward;
     }
 
 

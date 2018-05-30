@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnifeBehaviour : MonoBehaviour
 {
     public AudioClip hitSound;
+    public AudioClip blobSound;
 
     private GameObject owner;
     private AudioSource source;
@@ -29,12 +31,18 @@ public class KnifeBehaviour : MonoBehaviour
 
     void Rotate()
     {
-        gameObject.transform.Rotate(new Vector3(0, -480,0) * Time.deltaTime);
+        gameObject.transform.Rotate(new Vector3(0, 0, -480) * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag != "Player" && collider.tag != "Knife" && collider.tag != "Coin" && owner.GetComponent<Boomerang>().CheckIfState(Boomerang.knifeState.THROWING))
+        if (collider.tag == "Enemy")
+        {
+            Destroy(collider.gameObject);
+            source.PlayOneShot(blobSound);
+        }
+        else
+        if (collider.tag != "Item" && collider.tag != "Damage" && collider.tag != "Player" && collider.tag != "Knife" && collider.tag != "Coin" && owner.GetComponent<Boomerang>().CheckIfState(Boomerang.knifeState.THROWING))
         {
             StartCoroutine(HitTheWall(collider));
         }
@@ -51,7 +59,8 @@ public class KnifeBehaviour : MonoBehaviour
             transform.SetParent(collider.transform.parent, true);
         else
             transform.SetParent(collider.transform, true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Find("Cursor").GetComponent<Image>().color = Color.white;
         owner.GetComponent<Boomerang>().SetState(Boomerang.knifeState.INGROUND);
     }
 }

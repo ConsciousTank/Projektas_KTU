@@ -15,8 +15,7 @@ public static class Palyginimai
                 int palyginimas = KurisDidesnisIsSimboliu(zodis[i], zodis1[i]);
                 if (palyginimas != 0)
                 {
-                    return palyginimas;
-                    
+                    return palyginimas; 
                 }
             }
             return 0;
@@ -72,4 +71,5 @@ public static class Palyginimai
             return 0;
         }
     }
+
 }

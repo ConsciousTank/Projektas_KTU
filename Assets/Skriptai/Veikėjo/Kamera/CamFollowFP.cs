@@ -14,7 +14,7 @@ public class CamFollowFP : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -90f, 90f);
         if (Input.GetMouseButtonDown(0))
             Cursor.lockState = CursorLockMode.Locked;
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));

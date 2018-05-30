@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -51,6 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DestroyTimer.cs" />
+     <Compile Include="Assets\MenuExit.cs" />
+     <Compile Include="Assets\MenuStart.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -102,17 +105,18 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\DaiktoIrPelesReakcijos.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\DaiktuSarasasVeikejo.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\InventoriausAtidarymas.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\Inventorius.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\KeistiRodomaDaikta.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\Objektai\Inventorius\Daiktas.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\SaugojimasDaiktoInformacijos.cs" />
-     <Compile Include="Assets\ReikalingiPakeitimai\Inventorius\SlotuLaukas.cs" />
      <Compile Include="Assets\ReikalingiPakeitimai\Palyginimai.cs" />
      <Compile Include="Assets\Skriptai\DuomenuStrukturos\Medis.cs" />
-     <Compile Include="Assets\Skriptai\GameMan.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\DaiktoIrPelesReakcijos.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\DaiktoReakcijaSuKursoriumi.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\DaiktuSarasasVeikejo.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\InventoriausAtidarymas.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\Inventorius.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\KeistiRodomaDaikta.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\Objektai\Inventorius\Daiktas.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\SaugojamoDaiktoPavertimas.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\SaugojimasDaiktoInformacijos.cs" />
+     <Compile Include="Assets\Skriptai\Inventorius\SlotuLaukas.cs" />
      <Compile Include="Assets\Skriptai\Labirinto\DarknessBehaviour.cs" />
      <Compile Include="Assets\Skriptai\Labirinto\GetLevelFromManager.cs" />
      <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\ButtonManager.cs" />
@@ -123,12 +127,22 @@
      <Compile Include="Assets\Skriptai\Labirinto\LabirintoEditorius\SampleKambarys.cs" />
      <Compile Include="Assets\Skriptai\Labirinto\MoveForward.cs" />
      <Compile Include="Assets\Skriptai\Labirinto\ScoreScript.cs" />
+     <Compile Include="Assets\Skriptai\Priesu\Blob\BlobAI.cs" />
      <Compile Include="Assets\Skriptai\Testavimo\GeneratorTests.cs" />
+     <Compile Include="Assets\Skriptai\Utility\GameMan.cs" />
+     <Compile Include="Assets\Skriptai\Utility\PaimtIsGamemano.cs" />
+     <Compile Include="Assets\Skriptai\Utility\ScalableCamera.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Boomerang.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Judėjimas\Move.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Kamera\CamFollow.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\Kamera\CamFollowFP.cs" />
      <Compile Include="Assets\Skriptai\Veikėjo\KnifeBehaviour.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
+     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\WeaponCollection3Dan\Scripts\SimpleRotation.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
@@ -148,6 +162,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+     <None Include="Assets\StreamingAssets\build_info.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitSolidColor.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />

@@ -15,7 +15,7 @@ public class GetLevelFromManager : MonoBehaviour {
 
     public void UpdateLevel()
     {
-        textComponent.text = "Level " + (gameManager.GetLevel() + 1) + " completed \n\nScore: " + gameManager.GetCurrentScore();
+        textComponent.text = "Level " + (gameManager.GetLevel() + 1) + " completed \n\nScore: " + gameManager.GetCurrentScore() + " \n\n Enemies defeated: 3";
     }
 
 }

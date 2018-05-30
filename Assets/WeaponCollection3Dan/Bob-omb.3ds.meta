@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 1a7fc52a885861248bbb2d19fc04b134
+timeCreated: 1527612201
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bob-omb
+    100004: Capsule
+    100006: Cube
+    100008: Cube1
+    100010: Hyper
+    100012: Hyper1
+    100014: Hyper2
+    100016: HyperNURBS
+    100018: Light
+    100020: Light1
+    100022: Null_Objec
+    100024: Spher
+    100026: Spher1
+    100028: Sphere
+    400000: Bob-omb
+    400002: //RootNode
+    400004: Capsule
+    400006: Cube
+    400008: Cube1
+    400010: Hyper
+    400012: Hyper1
+    400014: Hyper2
+    400016: HyperNURBS
+    400018: Light
+    400020: Light1
+    400022: Null_Objec
+    400024: Spher
+    400026: Spher1
+    400028: Sphere
+    2100000: Mat1
+    2100002: Mat12
+    2300000: Bob-omb
+    2300002: Capsule
+    2300004: Cube
+    2300006: Cube1
+    2300008: Hyper
+    2300010: Hyper1
+    2300012: Hyper2
+    2300014: HyperNURBS
+    2300016: Null_Objec
+    2300018: Spher
+    2300020: Spher1
+    2300022: Sphere
+    3300000: Bob-omb
+    3300002: Capsule
+    3300004: Cube
+    3300006: Cube1
+    3300008: Hyper
+    3300010: Hyper1
+    3300012: Hyper2
+    3300014: HyperNURBS
+    3300016: Null_Objec
+    3300018: Spher
+    3300020: Spher1
+    3300022: Sphere
+    4300000: Null_Objec
+    4300002: Bob-omb
+    4300004: Hyper1
+    4300006: Capsule
+    4300008: Hyper
+    4300010: Cube1
+    4300012: Hyper2
+    4300014: Cube
+    4300016: Spher
+    4300018: Spher1
+    4300020: HyperNURBS
+    4300022: Sphere
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

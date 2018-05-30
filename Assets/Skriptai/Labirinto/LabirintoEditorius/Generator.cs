@@ -30,6 +30,7 @@ public class Generator : MonoBehaviour {
     public GameMan gameManager;
     public GameObject coin;
     public GameObject darkDoor;
+    public GameObject blob;
     private GameObject currentPlayer;
     private GameObject currentFinishRoom;
     private GameObject currentStartRoom;
@@ -118,6 +119,11 @@ public class Generator : MonoBehaviour {
 
     public static bool isEmpty(int x, int y)
     {
+        if (x < 0 || y < 0 || x > 24 || y > 24)
+        {
+            Debug.Log("Out of placeable area, cannot put the map");
+            return false;
+        }
         if (roomCoord[x, y].id == -1)
             return true;
         else
@@ -163,6 +169,7 @@ public class Generator : MonoBehaviour {
     public void DestroyRealRooms()
     {
         Debug.Log("Destroying Rooms in the Level");
+        AddPlayerRoom();
         while (Rooms.Count != 0)
         {
             Destroy(Rooms[0]);
@@ -173,6 +180,12 @@ public class Generator : MonoBehaviour {
         {
             Destroy(coins[0]);
             coins.RemoveAt(0);
+        }
+        Debug.Log("Destroying other prefabs");
+        GameObject[] knives = GameObject.FindGameObjectsWithTag("Knife");
+        for (int i = 0; i < knives.Length; i++)
+        {
+            Destroy(knives[i]);
         }
 
     }
@@ -207,6 +220,11 @@ public class Generator : MonoBehaviour {
                     {
                         GameObject c = Instantiate(coin, new Vector3(10 * x, 1, 10 * y), transform.rotation);
                         coins.Add(c);
+                    }
+                    if (Random.value >= 0.5)
+                    {
+                        GameObject e = Instantiate(blob, new Vector3(10 * x, 1, 10 * y), transform.rotation);
+                        coins.Add(e);
                     }
                     r.transform.Rotate(new Vector3(r.transform.rotation.x, -90 * roomCoord[x, y].rotation, r.transform.rotation.z));
                     Rooms.Add(r);

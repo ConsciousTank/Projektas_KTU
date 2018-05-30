@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be1b14c801459445b9d7370bdd96fd0, type: 3}
+  m_Name: Lapas
+  m_EditorClassIdentifier: 
+  modelis: {fileID: 1862457257295606, guid: d5c45d55b0729854fbcc5a16d10fb33c, type: 2}
+  laukelioNr: 0
+  daiktoPaveiksliukas: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  pavadinimas: Lapas
+  aprasymas: "Pana\u0161us \u012F plyt\u0105"

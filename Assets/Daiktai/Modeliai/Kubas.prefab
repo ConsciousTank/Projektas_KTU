@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33124834079163238}
   - component: {fileID: 65320155137711762}
   - component: {fileID: 23867880079647746}
+  - component: {fileID: 114881231475885568}
+  - component: {fileID: 114543852049018352}
   m_Layer: 0
   m_Name: Kubas
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,8 +92,31 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399951832199652}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114543852049018352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399951832199652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aff72282eef9e4a89484ccac0d3b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114881231475885568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399951832199652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835b580e8689fa3419ecd89a987590dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daiktoInformacija: {fileID: 11400000, guid: 4c1cf646ecd7bb74982f7e0aa5d8ce8c, type: 2}

@@ -11,6 +11,9 @@ TagManager:
   - EndFinish
   - Coin
   - Knife
+  - Item
+  - Enemy
+  - Damage
   layers:
   - Default
   - TransparentFX
@@ -26,9 +29,9 @@ TagManager:
   - PlaceSpace
   - Walls
   - Darkness emmitor
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Props
   - 
   - 
   - 

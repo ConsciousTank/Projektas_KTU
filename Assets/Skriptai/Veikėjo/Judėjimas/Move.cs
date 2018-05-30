@@ -10,6 +10,9 @@ public class Move : MonoBehaviour {
     public Rigidbody rb;
     public AudioClip coinSound;
 
+
+    public float invulTime = 1f;
+    private bool invulnerable = false;
     private AudioSource source;
     private bool firstPerson = true;
     private Vector3 movement;
@@ -34,6 +37,8 @@ public class Move : MonoBehaviour {
         Transform transform = gameObject.transform;
 	}
 	
+    
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Finish")
@@ -48,7 +53,23 @@ public class Move : MonoBehaviour {
             source.PlayOneShot(coinSound);
             Destroy(other.gameObject);
         }
-}
+        if (other.gameObject.tag == "Item")
+        {
+            Daiktas daiktas = other.gameObject.GetComponent<SaugojimasDaiktoInformacijos>().NuDuokInformacija();
+            GameObject inventorius = GameObject.Find("Daiktai");
+            inventorius.GetComponent<Inventorius>().Prideti(daiktas);
+            source.PlayOneShot(coinSound);
+            Destroy(other.gameObject);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Damage")
+        {
+            gameManager.ApplyDamage(10);
+        }
+    }
 
 	void FixedUpdate () {
         float h = Input.GetAxis("Horizontal");
@@ -64,8 +85,6 @@ public class Move : MonoBehaviour {
         }
 
     }
-
-
 
     void Mov3P(float h, float v)
     {
