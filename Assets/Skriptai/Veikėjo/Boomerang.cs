@@ -46,7 +46,6 @@ public class Boomerang : MonoBehaviour
         {
             Destroy(currentKnife);
             state = knifeState.INHAND;
-            GameObject.Find("Cursor").GetComponent<Image>().color = Color.white;
         }
     }
 
